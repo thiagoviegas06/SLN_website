@@ -4,16 +4,16 @@ GitHub Pages site for the UnitMatch / SLN↔DREDge Post-NeurIPS interactive
 localization dashboards (self-contained Plotly/Bokeh HTML).
 
 `public/index.html` is the curated landing page: per-session `cnn` / `transformer`
-dashboards grouped by animal (AL032, AL036), plus a **Combined** section for the
-all-session-per-animal dashboards (AL032, AL036, Steinmetz). 60 HTML files,
-~765 MB total. Each dashboard pulls Plotly from a CDN, so viewers need internet.
+dashboards grouped by animal (AL032, AL036, Misi), plus a **Combined** section for the
+all-session-per-animal dashboards (AL032, AL036, Steinmetz). 69 HTML files,
+~872 MB total. Each dashboard pulls Plotly from a CDN, so viewers need internet.
 
 ## Layout
 
 ```
 public/            # everything deployed to Pages
 ├── index.html     # landing page
-└── *.html         # 59 dashboards
+└── *.html         # 68 dashboards
 .github/workflows/deploy.yml   # publishes public/ to Pages on push to main
 ```
 
