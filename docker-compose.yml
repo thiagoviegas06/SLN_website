@@ -1,0 +1,23 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - "80"
+    restart: unless-stopped
+    networks:
+      - sln-website
+      - proxy
+    labels:
+      - "traefik.docker.network=proxy"
+      - "traefik.enable=true"
+      - "traefik.http.routers.sln-website.rule=Host(`sln.pxndey.com`)"
+      - "traefik.http.routers.sln-website.entrypoints=web"
+      - "traefik.http.services.sln-website.loadbalancer.server.port=80"
+
+networks:
+  sln-website:
+    driver: bridge
+  proxy:
+    external: true
